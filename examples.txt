@@ -1,0 +1,23 @@
+const statusCode = {
+ created: 201,
+ baqRequest: 400,
+ noContent: 204,
+};
+
+{
+  "name": "Chapolin",
+  "email": "roberto@bolano.com",
+  "password": "sigaMeOsBons"
+ }
+
+ {
+  "name": "Adão Negro",
+  "email": "adao@blackadam.com",
+  "password": "senhaSuperSecreta"
+ }
+
+
+ http://localhost
+
+
+ const REGEX_VALIDATE_NUMBER = /^[0-9]+$/;

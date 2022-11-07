@@ -1,0 +1,20 @@
+[
+  {
+    "id": "0",
+    "name": "Clark Kent",
+    "email": "clark.kent@dailyplanet.com",
+    "password": "martha123"
+  },
+  {
+    "id": "1",
+    "name": "Bruce Wayne",
+    "email": "bruce@waynecorp.com",
+    "password": "123martha"
+  },
+  {
+    "id": "2",
+    "name": "Daiana Prince",
+    "email": "daiana.prince@louvre.com",
+    "password": "monalisa123"
+  }
+]
