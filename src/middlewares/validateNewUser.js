@@ -1,41 +1,24 @@
-const validaName = (name, res) => {
-  if (name === undefined) {
-    return res.status(400).json({ message: 'O campo name é obrigatório' });
-  }
-  if (name.length < 2) {
-    return res.status(400).json({ message: 'O campo name precisa ter pelo menos 2 caracteres' });
-  }
-  return null;
-};
+const Joi = require('joi');
 
-const validaEmail = (email, res) => {
-  if (email === undefined) {
-    return res.status(400).json({ message: 'O campo email é obrigatório' });
-  }
-  const REGEX_EMAIL = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/i;
-  if (!REGEX_EMAIL.test(email)) {
-    return res.status(400).json({ message: 'O campo email precisa de um email válido' });
-  }
-  return null;
-};
+const checkUser = Joi.object({
+  name: Joi.string().min(3).max(7).required(),
+  email: Joi.string().email().required(),
+  password: Joi.string().min(8).max(50).required(),
+}).required().messages({
+  'any.required': 'O campo {#label} é obrigatório.',
+  'string.empty': 'O campo {#label} não pode estar vazio.',
+  'string.base': 'O campo {#label} tem que ser uma string.',
+  'string.min': 'O campo {#label} precisa ter {#limit} caracteres',
+  'string.max': 'O campo {#label} precisa ter no máximo {#limit} caracteres',
+});
 
-const validaPassword = (password, res) => {
-  if (password === undefined) {
-    return res.status(400).json({ message: 'O campo password é obrigatório' });
-  }
-  if (password.length < 8) {
-    return res
-      .status(400)
-      .json({ message: 'O campo password precisa ter pelo menos 8 caracteres' });
-  }
-  return null;
-};
 const validateNewUser = async (req, res, next) => {
   const { name, email, password } = req.body;
-  return validaName(name, res)
-    || validaEmail(email, res)
-    || validaPassword(password, res)
-    || next();
+  const { error } = checkUser.validate({ name, email, password });
+  if (error !== undefined) {
+    return res.status(400).json({ message: error.details[0].message });
+  }
+  next();
 };
 
 module.exports = { validateNewUser };

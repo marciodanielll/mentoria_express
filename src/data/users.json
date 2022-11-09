@@ -30,5 +30,21 @@
     "name": "Márcio Daniel ",
     "email": "md@glamber.com",
     "password": "mudarmsc123"
+  },
+  {
+    "id": 5,
+    "email": "md@glamber.com",
+    "password": "mudarmsc123"
+  },
+  {
+    "id": 6,
+    "name": "M",
+    "email": "md@glamber.com",
+    "password": "mudarmsc123"
+  },
+  {
+    "id": 7,
+    "name": "Marcio",
+    "password": "mudarmsc123"
   }
 ]
