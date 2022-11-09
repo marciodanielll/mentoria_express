@@ -25,24 +25,17 @@ const validaPassword = (password, res) => {
   }
   if (password.length < 8) {
     return res
-    .status(400)
-    .json({ message: 'O campo password precisa ter pelo menos 8 caracteres' });
+      .status(400)
+      .json({ message: 'O campo password precisa ter pelo menos 8 caracteres' });
   }
   return null;
 };
 const validateNewUser = async (req, res, next) => {
   const { name, email, password } = req.body;
-
-  const vn = validaName(name, res);
-  if (vn !== null) return vn;
-
-  const nv = validaEmail(email, res);
-  if (nv !== null) return vn;
-
-  const vp = validaPassword(password, res);
-  if (vp !== null) return vp;
-
-  next();
+  return validaName(name, res)
+    || validaEmail(email, res)
+    || validaPassword(password, res)
+    || next();
 };
 
 module.exports = { validateNewUser };

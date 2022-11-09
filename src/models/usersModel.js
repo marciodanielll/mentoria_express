@@ -9,7 +9,7 @@ const getAllUsers = async () => {
   return users;
 };
 
-const createNewUser = async (name, email, password) => {
+const createNewUser = async ({ name, email, password }) => {
   const users = await getAllUsers();
   const id = Number(users[users.length - 1].id) + 1;
   users.push({

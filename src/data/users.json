@@ -3,18 +3,32 @@
     "id": "0",
     "name": "Clark Kent",
     "email": "clark.kent@dailyplanet.com",
+    "rule": "user",
     "password": "martha123"
   },
   {
     "id": "1",
     "name": "Bruce Wayne",
     "email": "bruce@waynecorp.com",
+    "rule": "user",
     "password": "123martha"
   },
   {
     "id": "2",
     "name": "Daiana Prince",
     "email": "daiana.prince@louvre.com",
+    "rule": "user",
     "password": "monalisa123"
+  },
+  {
+    "id": 3,
+    "name": "Chapolin",
+    "password": "sigaMeOsBons"
+  },
+  {
+    "id": 4,
+    "name": "Márcio Daniel ",
+    "email": "md@glamber.com",
+    "password": "mudarmsc123"
   }
 ]
