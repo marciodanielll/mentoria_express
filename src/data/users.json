@@ -19,32 +19,5 @@
     "email": "daiana.prince@louvre.com",
     "rule": "user",
     "password": "monalisa123"
-  },
-  {
-    "id": 3,
-    "name": "Chapolin",
-    "password": "sigaMeOsBons"
-  },
-  {
-    "id": 4,
-    "name": "Márcio Daniel ",
-    "email": "md@glamber.com",
-    "password": "mudarmsc123"
-  },
-  {
-    "id": 5,
-    "email": "md@glamber.com",
-    "password": "mudarmsc123"
-  },
-  {
-    "id": 6,
-    "name": "M",
-    "email": "md@glamber.com",
-    "password": "mudarmsc123"
-  },
-  {
-    "id": 7,
-    "name": "Marcio",
-    "password": "mudarmsc123"
   }
 ]

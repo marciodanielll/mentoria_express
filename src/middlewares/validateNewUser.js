@@ -8,8 +8,8 @@ const checkUser = Joi.object({
   'any.required': 'O campo {#label} é obrigatório.',
   'string.empty': 'O campo {#label} não pode estar vazio.',
   'string.base': 'O campo {#label} tem que ser uma string.',
-  'string.min': 'O campo {#label} precisa ter {#limit} caracteres',
-  'string.max': 'O campo {#label} precisa ter no máximo {#limit} caracteres',
+  'string.min': 'O campo {#label} precisa ter {#limit} caracteres.',
+  'string.max': 'O campo {#label} precisa ter no máximo {#limit} caracteres.',
 });
 
 const validateNewUser = async (req, res, next) => {
@@ -21,4 +21,4 @@ const validateNewUser = async (req, res, next) => {
   next();
 };
 
-module.exports = { validateNewUser };
+module.exports = validateNewUser;

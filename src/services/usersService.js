@@ -1,6 +1,8 @@
 const usersModel = require('../models/usersModel');
 
 const createNewUser = async ({ name, email, password }) => {
+  // criar um usuário apenas se ele já não existir
+  // colar a rule para todo usuário cadastrado nesse recurso
   const newUser = await usersModel.createNewUser({ name, email, password });
   return newUser;
 };
