@@ -1,28 +1,19 @@
-const { readFile, writeFile } = require('fs').promises;
-const path = require('path');
+const connection = require('./connection');
 
-const usersPath = path.resolve(__dirname, '..', 'data', 'users.json');
+const createNewUser = async ({ name, email, rule = 'user', password }) => {
+  const [result] = await connection.execute(`INSERT INTO heroes.users 
+    (name, email, rule, password) 
+   VALUES (?, ?, ?, ?)`, [name, email, rule, password]);
 
-const getAllUsers = async () => {
-  const response = await readFile(usersPath, 'utf8');
-  const users = JSON.parse(response);
-  return users;
+  return { id: result.insertId, name, email, rule, password };
 };
 
-const createNewUser = async ({ name, email, password }) => {
-  const users = await getAllUsers();
-  const id = Number(users[users.length - 1].id) + 1;
-  users.push({
-    id,
-    name, 
-    email, 
-    password,
-  });
-  await writeFile(usersPath, JSON.stringify(users, null, 2));
-  return id;
+const getAllUsers = async () => {
+  const [result] = await connection.execute('SELECT * FROM heroes.users');
+  return result;
 };
 
 module.exports = {
-  getAllUsers,
   createNewUser,
+  getAllUsers,
 };

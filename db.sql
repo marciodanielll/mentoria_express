@@ -7,11 +7,11 @@ CREATE TABLE heroes.users(
   name VARCHAR(50) NOT NULL,
   email VARCHAR(50) UNIQUE NOT NULL,
   rule VARCHAR(50) NOT NULL,
-  passsword VARCHAR(50) NOT NULL
+  password VARCHAR(50) NOT NULL
 );
 
 INSERT INTO
-  heroes.users (name, email, rule, passsword)
+  heroes.users (name, email, rule, password)
 VALUES
   (
     "Clark Kent",

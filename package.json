@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/api/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/**/*.test.js --exit",
     "debug": "nodemon .",
     "start": "node .",
     "lint": "eslint src/**/*.js"
@@ -15,12 +15,16 @@
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.14",
+    "chai": "^4.3.7",
     "eslint-config-trybe-backend": "^2.1.0",
-    "nodemon": "^2.0.20"
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "sinon": "^14.0.2"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "joi": "^17.7.0"
+    "joi": "^17.7.0",
+    "mysql2": "^2.3.3"
   }
 }
