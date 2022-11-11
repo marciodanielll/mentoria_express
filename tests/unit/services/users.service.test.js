@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
-const usersService = require('../../src/services/usersService');
-const usersModel = require('../../src/models/usersModel');
+const usersService = require('../../../src/services/usersService');
+const usersModel = require('../../../src/models/usersModel');
 
 const mockUsers = [
   {
